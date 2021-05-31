@@ -54,12 +54,19 @@ var cognomeUtente = prompt('Inserisci il tuo cognome');
 // stampo la lista ordinata alfabeticamente
 
 cognomi.sort();
-    document.getElementById("cognomi").innerHTML = cognomi;
+    document.getElementById("cognomi").innerHTML += cognomi;
 
 // scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
 
-var a = cognomi.indexOf(cognomeUtente) + 1;
-    document.getElementById("place").innerHTML = 'Il tuo cognome si trova alla ' + a + 'a posizione della lista';
+for (var j = 0; j < cognomi.length; j++) {    
+    if (cognomi[j] == cognomeUtente) {
+        j = j + 1;
+        document.getElementById("place").innerHTML = 'Il tuo cognome si trova alla ' + j + 'a posizione della lista';
+    }
+}
+
+// var a = cognomi.indexOf(cognomeUtente) + 1;
+//     document.getElementById("place").innerHTML = 'Il tuo cognome si trova alla ' + a + 'a posizione della lista';
 
 
 // Bonus: (da fare solo dopo aver concluso tutto) Trovate un modo per trasformare in maiuscolo la prima lettera del cognome inserito dall'utente e tutto il resto in minuscolo.
