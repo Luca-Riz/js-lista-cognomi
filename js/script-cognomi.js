@@ -14,13 +14,13 @@ var cognomi = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli']
 // chiedo all’utente il cognome e lo inserisco nell'array
 
 var cognomeUtente = prompt('Inserisci il tuo cognome');
-
 cognomi.push(cognomeUtente);
 console.log(cognomi);
 
 // stampo la lista ordinata alfabeticamente
 
-
+cognomi.sort();
+  document.getElementById("cognomi").innerHTML = cognomi;
 
 // scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
 
