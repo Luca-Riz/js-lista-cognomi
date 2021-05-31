@@ -61,14 +61,18 @@ cognomi.sort();
 for (var j = 0; j < cognomi.length; j++) {    
     if (cognomi[j] == cognomeUtente) {
         j = j + 1;
-        document.getElementById("place").innerHTML = 'Il tuo cognome si trova alla ' + j + 'a posizione della lista';
+        document.getElementById("place").innerHTML = 'Il tuo cognome si trova alla ' + j + 'a posizione della lista.';
     }
 }
 
-// var a = cognomi.indexOf(cognomeUtente) + 1;
-//     document.getElementById("place").innerHTML = 'Il tuo cognome si trova alla ' + a + 'a posizione della lista';
-
-
 // Bonus: (da fare solo dopo aver concluso tutto) Trovate un modo per trasformare in maiuscolo la prima lettera del cognome inserito dall'utente e tutto il resto in minuscolo.
 
+var low = cognomeUtente.toLowerCase();
+console.log(low);
+var upp = cognomeUtente.charAt(0).toUpperCase();
 
+var restoLow = low.slice(1);
+var cognomeCap = upp+restoLow;
+console.log(cognomeCap);
+
+document.getElementById("primaMaiuscola").innerHTML = 'Il tuo cognome scritto come si deve è: ' + cognomeCap;
