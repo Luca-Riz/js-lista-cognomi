@@ -49,7 +49,16 @@ var cognomi = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli']
 // chiedo all’utente il cognome e lo inserisco nell'array
 
 var cognomeUtente = prompt('Inserisci il tuo cognome');
-    cognomi.push(cognomeUtente);
+
+// --- inizio bonus ---
+var low = cognomeUtente.toLowerCase();
+var upp = cognomeUtente.charAt(0).toUpperCase();
+
+var restoLow = low.slice(1);
+var cognomeCap = upp+restoLow;
+
+cognomi.push(cognomeCap);
+// --- fine bonus ---
 
 // stampo la lista ordinata alfabeticamente
 
@@ -59,7 +68,7 @@ cognomi.sort();
 // scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
 
 for (var j = 0; j < cognomi.length; j++) {    
-    if (cognomi[j] == cognomeUtente) {
+    if (cognomi[j] == cognomeCap) {
         j = j + 1;
         document.getElementById("place").innerHTML = 'Il tuo cognome si trova alla ' + j + 'a posizione della lista.';
     }
@@ -67,13 +76,4 @@ for (var j = 0; j < cognomi.length; j++) {
 
 // Bonus: (da fare solo dopo aver concluso tutto) Trovate un modo per trasformare in maiuscolo la prima lettera del cognome inserito dall'utente e tutto il resto in minuscolo.
 
-var low = cognomeUtente.toLowerCase();
-// console.log(low);
-var upp = cognomeUtente.charAt(0).toUpperCase();
-
-var restoLow = low.slice(1);
-var cognomeCap = upp+restoLow;
-// console.log(cognomeCap);
-
-if (cognomeCap != cognomeUtente) {document.getElementById("primaMaiuscola").innerHTML = 'Il tuo cognome scritto come si deve è: ' + cognomeCap;
-}
+// --- bonus al suo posto, vedere nota sopra ---
