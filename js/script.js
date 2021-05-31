@@ -15,18 +15,18 @@ var eMailValide = ['pinco@mail.com', 'pallo@mail.com', 'toni@mail.com', 'bepi@ma
 var eMailUser = prompt('Inserisci la tua e-mail')
 
 // controllo che sia sulla lista e stampo un messaggio in base al risultato della verifica
+var ok;
 
-for (var i = 0; i < eMailValide.length; i++) {
+for (var i = 0; i < eMailValide.length; i++) {    
     if (eMailValide[i] == eMailUser) {
-        console.log('mail nella lista');
-    }  else {
-        console.log('mail non valida');
+        var ok = true;
+        document.getElementById('mailok').innerHTML += ' nella lista';
     }
 }
 
-
-
-
+if ( ok != true) {
+    document.getElementById('mailok').innerHTML += ' non presente nella lista ammessa, riprovare.';
+}
 
 
 //------------------------------------------------------------------
